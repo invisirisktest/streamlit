@@ -28,8 +28,8 @@ jobs:
       - name: Parse Response
         id: parseResponse
         run: echo "scan_id=${{fromJSON(steps.createScan.outputs.response).data.scan_id}}" >> "$GITHUB_OUTPUT"
-      - name: Print GITHUB_RUN_RESULT
-        run: echo "GITHUB_RUN_RESULT: ${{ process.env.GITHUB_RUN_RESULT }}" >> $GITHUB_ENV
+      #- name: Print GITHUB_RUN_RESULT
+        #run: echo "GITHUB_RUN_RESULT: ${{ process.env.GITHUB_RUN_RESULT }}" >> $GITHUB_ENV
 
   build_node:
     runs-on: ubuntu-latest
@@ -64,8 +64,8 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
-    -  name: Print GITHUB_RUN_RESULT
-       run: echo "GITHUB_RUN_RESULT: ${{ env.GITHUB_RUN_RESULT }}"
+    #-  name: Print GITHUB_RUN_RESULT
+    #   run: echo "GITHUB_RUN_RESULT: ${{ env.GITHUB_RUN_RESULT }}"
 
   
   build_python:
@@ -100,5 +100,5 @@ jobs:
         pip install -r test-requirements.txt
         pip install -r integration-requirements.txt
       
-    -  name: Print GITHUB_RUN_RESULT
-       run: echo "GITHUB_RUN_RESULT: ${{ env.GITHUB_RUN_RESULT }}"
+    #-  name: Print GITHUB_RUN_RESULT
+    #   run: echo "GITHUB_RUN_RESULT: ${{ env.GITHUB_RUN_RESULT }}"
