@@ -6,13 +6,6 @@ snowflake-connector-python>=2.8.0
 langchain>=0.2.0
 langchain-community>=0.2.0
 
-# Additional dataframe formats for testing:
-polars
-xarray
-dask
-ray
-duckdb
-
 # Used for testing of st.connection
 sqlalchemy[mypy]>=1.4.25, <2
 
