@@ -28,7 +28,7 @@ jobs:
       - name: Parse Response
         id: parseResponse
         run: echo "scan_id=${{fromJSON(steps.createScan.outputs.response).data.scan_id}}" >> "$GITHUB_OUTPUT"
-      #- name: Print GITHUB_RUN_RESULT
+      #- name: Print GITHUB_RUN_RESULT..
         #run: echo "GITHUB_RUN_RESULT: ${{ process.env.GITHUB_RUN_RESULT }}" >> $GITHUB_ENV
 
   build_node:
